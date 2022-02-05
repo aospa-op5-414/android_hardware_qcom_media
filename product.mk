@@ -1,4 +1,4 @@
-#MSM_VIDC_TARGET_LIST := msmnile
+MSM_VIDC_TARGET_LIST := msmnile msm8998
 
 ifeq ($(call is-board-platform-in-list, $(QCOM_BOARD_PLATFORMS)),true)
 
@@ -22,7 +22,7 @@ MM_VIDEO += libstagefrighthw
 
 PRODUCT_PACKAGES += $(MM_VIDEO)
 
-ifeq ($(call is-board-platform-in-list, msmnile $(MSMSTEPPE) atoll $(TRINKET)),true)
+ifeq ($(call is-board-platform-in-list, msm8998 msmnile $(MSMSTEPPE) atoll $(TRINKET)),true)
 include hardware/qcom/media/conf_files/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
 else ifeq ($(TARGET_BOARD_PLATFORM), sdmshrike)
 include hardware/qcom/media/conf_files/msmnile/msmnile.mk
